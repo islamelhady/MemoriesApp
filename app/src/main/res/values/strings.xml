@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Memories</string>
+    <string name="app_action_bar_text">memories</string>
+    <string name="search_here">Search memories</string>
+    <string name="clear">clear</string>
+    <string name="no_data_image">no data image</string>
+    <string name="add_memories">MEMORIES</string>
 </resources>
