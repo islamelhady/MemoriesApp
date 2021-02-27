@@ -1,9 +1,8 @@
-package com.elhady.memories.ui
+package com.elhady.memories.ui.activity
 
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.elhady.memories.MemoriesActivity
 
 /**
  * Created by islam elhady on 26-Feb-21.
