@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.fragments.NoteFragment">
+    tools:context=".ui.fragments.MemoriesFragment">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appBarLayout1"
@@ -152,7 +152,8 @@
             app:elevation="0dp"
             app:fabSize="normal"
             app:tint="@android:color/white"
-            app:useCompatPadding="false" />
+            app:useCompatPadding="false"
+            android:contentDescription="@string/app_name" />
 
         <TextView
             android:id="@+id/chatFabText"
