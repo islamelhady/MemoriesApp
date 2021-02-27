@@ -9,4 +9,9 @@
     <string name="memories_title">MVVM Memories App?</string>
     <string name="some_text">This is simple memories app that follows MVVM architectural design pattern and uses android jetpack components.</string>
     <string name="dd_mm_yyyy">dd/mm/yyyy</string>
+    <string name="back">back</string>
+    <string name="edited_on">Edited on: %1$s</string>
+    <string name="save">save</string>
+    <string name="title">Title</string>
+    <string name="note">Note</string>
 </resources>
