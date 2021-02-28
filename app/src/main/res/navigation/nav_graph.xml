@@ -1,5 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/nav_graph">
-
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/memoriesFragment">
+    <fragment
+        android:id="@+id/memoriesFragment"
+        android:name="com.elhady.memories.ui.fragments.MemoriesFragment"
+        android:label="fragment_memories"
+        tools:layout="@layout/fragment_memories" >
+        <action
+            android:id="@+id/action_memoriesFragment_to_memoriesContentFragment"
+            app:destination="@id/memoriesContentFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/memoriesContentFragment"
+        android:name="com.elhady.memories.ui.fragments.MemoriesContentFragment"
+        android:label="MemoriesContentFragment"
+        tools:layout="@layout/fragment_memories_content">
+        <action
+            android:id="@+id/action_memoriesContentFragment_to_memoriesFragment"
+            app:destination="@id/memoriesFragment" />
+        <argument
+            android:name="Memories"
+            app:nullable="true"
+            app:argType="com.elhady.memories.model.Memories"
+            android:defaultValue="@null" />
+    </fragment>
 </navigation>

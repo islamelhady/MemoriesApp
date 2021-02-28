@@ -2,12 +2,12 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/noteContentFragmentParent"
+    android:id="@+id/memoriesContentFragmentParent"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/toolbarFragmentNoteContent"
+        android:id="@+id/toolbarFragmentMemoriesContent"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -46,13 +46,13 @@
             android:text="@string/edited_on"
             android:textSize="12sp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/noteOptionsMenu"
+            app:layout_constraintEnd_toStartOf="@+id/memoriesOptionsMenu"
             app:layout_constraintStart_toEndOf="@+id/backBtn"
             app:layout_constraintTop_toTopOf="parent"
             tools:ignore="RelativeOverlap" />
 
         <ImageView
-            android:id="@+id/noteOptionsMenu"
+            android:id="@+id/memoriesOptionsMenu"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="15dp"
@@ -79,7 +79,7 @@
         app:layout_constraintBottom_toTopOf="@+id/bottomBar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbarFragmentNoteContent">
+        app:layout_constraintTop_toBottomOf="@+id/toolbarFragmentMemoriesContent">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -103,7 +103,7 @@
                 android:textSize="22sp" />
 
             <com.yahiaangelo.markdownedittext.MarkdownEditText
-                android:id="@+id/etNoteContent"
+                android:id="@+id/etMemoriesContent"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="22dp"
@@ -111,7 +111,7 @@
                 android:layout_marginEnd="20dp"
                 android:background="@null"
                 android:fontFamily="@font/koho_regular"
-                android:hint="@string/note"
+                android:hint="@string/memories"
                 android:importantForAutofill="no"
                 android:inputType="none"
                 android:paddingBottom="10dp"
