@@ -17,4 +17,6 @@
     <string name="choose_color">choose color</string>
     <string name="take_picture">Take Picture</string>
     <string name="select_image">Select Image</string>
+    <string name="delete">Delete</string>
+    <string name="fileAuthority">com.elhady.memories.fileProvider</string>
 </resources>
