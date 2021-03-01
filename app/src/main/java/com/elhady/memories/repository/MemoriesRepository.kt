@@ -8,7 +8,7 @@ import com.elhady.memories.model.Memories
  */
 class MemoriesRepository(private val database: MemoriesDatabase) {
 
-    fun getMemories() =
+    fun getAllMemories() =
         database.getMemoriesDao().getAllMemories()
 
     fun searchMemories(query: String) =
@@ -20,4 +20,6 @@ class MemoriesRepository(private val database: MemoriesDatabase) {
     suspend fun updateMemories(memories: Memories) =
         database.getMemoriesDao().updateMemories(memories)
 
+    suspend fun deleteMemories(memories: Memories) =
+        database.getMemoriesDao().deleteMemories(memories)
 }
