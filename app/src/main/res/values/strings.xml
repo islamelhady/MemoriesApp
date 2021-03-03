@@ -19,4 +19,7 @@
     <string name="select_image">Select Image</string>
     <string name="delete">Delete</string>
     <string name="fileAuthority">com.elhady.memories.fileProvider</string>
+    <string name="short_label">New Memories</string>
+    <string name="long_label">Add New Memories</string>
+    <string name="disabled_message">New Note Shortcut Disabled</string>
 </resources>
