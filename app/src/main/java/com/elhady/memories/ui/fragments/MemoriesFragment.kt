@@ -74,7 +74,7 @@ class MemoriesFragment : Fragment(R.layout.fragment_memories) {
         memoriesViewModel.saveImagePath(null)
 
 
-        //Receives confirmation from the noteContentFragment
+        //Receives confirmation from the memoriesContentFragment
         setFragmentResultListener("key") { _, bundle ->
             when (val result = bundle.getString("bundleKey")) {
                 "Memories Saved", "Empty Memories Discarded" -> {

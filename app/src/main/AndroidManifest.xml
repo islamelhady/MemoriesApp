@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.elhady.memories">
 
-    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.CAMERA" />
 
     <application
         android:allowBackup="true"
@@ -10,17 +11,19 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Memories">
+        android:theme="@style/Theme.Memories"
+        tools:ignore="AllowBackup">
         <provider
-            android:authorities="com.elhady.memories.fileProvider"
             android:name="androidx.core.content.FileProvider"
+            android:authorities="com.elhady.memories.fileProvider"
             android:exported="false"
             android:grantUriPermissions="true">
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/fileprovider"/>
+                android:resource="@xml/fileprovider" />
 
         </provider>
+
         <activity
             android:name=".ui.activity.SplashActivity"
             android:theme="@style/splash">
@@ -29,6 +32,9 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+            <meta-data
+                android:name="android.app.shortcuts"
+                android:resource="@xml/shortcuts"/>
         </activity>
         <activity android:name=".ui.activity.MemoriesActivity" />
     </application>
