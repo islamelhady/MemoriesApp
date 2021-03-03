@@ -9,13 +9,10 @@ import android.graphics.Color
 import android.graphics.drawable.Drawable
 import android.net.Uri
 import android.os.Bundle
-import android.provider.ContactsContract
 import android.provider.MediaStore
 import android.text.Spannable
 import android.text.SpannableString
 import android.text.style.ImageSpan
-import android.transition.Transition
-import android.transition.TransitionListenerAdapter
 import android.util.Log
 import android.view.ContextMenu
 import android.view.MenuItem
@@ -33,6 +30,8 @@ import androidx.fragment.app.setFragmentResult
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.navArgs
+import androidx.transition.Transition
+import androidx.transition.TransitionListenerAdapter
 import com.elhady.memories.R
 import com.elhady.memories.databinding.BottomSheetDialogBinding
 import com.elhady.memories.databinding.FragmentMemoriesContentBinding
@@ -202,9 +201,9 @@ class MemoriesContentFragment : Fragment() {
     }
 
     private fun addSharedElementListener() {
-        (sharedElementEnterTransition as androidx.transition.Transition).addListener(
-            object : androidx.transition.TransitionListenerAdapter() {
-                override fun onTransitionStart(transition: androidx.transition.Transition) {
+        (sharedElementEnterTransition as Transition).addListener(
+            object : TransitionListenerAdapter() {
+                override fun onTransitionStart(transition: Transition) {
                     super.onTransitionStart(transition)
                     if (args.memories?.imagePath != null) {
                         contentBinding.memoriesImage.isVisible = true
