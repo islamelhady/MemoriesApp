@@ -1,10 +1,10 @@
 <resources>
     <string name="app_name">Memories</string>
     <string name="app_action_bar_text">memories</string>
-    <string name="search_here">Search memories</string>
+    <string name="search_here">Search your memo</string>
     <string name="clear">clear</string>
     <string name="no_data_image">no data image</string>
-    <string name="add_memories">MEMORIES</string>
+    <string name="add_memories">MEMO</string>
     <string name="memoriesContentImage">MemoriesContentImage</string>
     <string name="memories_title">MVVM Memories App?</string>
     <string name="some_text">This is simple memories app that follows MVVM architectural design pattern and uses android jetpack components.</string>

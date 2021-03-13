@@ -1,47 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#F3722C</color>
-    <color name="colorPrimaryDark">#F9844A</color>
-    <color name="colorAccent">#D6564F</color>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
-    <color name="yellow">#FFD600</color>
-    <color name="hintColor">#928E8E</color>
+    <color name="colorPrimary">#262627</color>
+    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="colorAccent">#151515</color>
+    <color name="yellow">#FBC02D</color>
+    <color name="hint">#ACACAC</color>
+
 
     <!--color palette-->
-    <color name="purple">#D4C4E3</color>
-    <color name="darkPurple">#9387F5</color>
-    <color name="blue">#A8DAF0</color>
-    <color name="peach">#F0C390</color>
-    <color name="green">#C3F09C</color>
-    <color name="orangeRed">#F3722C</color>
-    <color name="yellowOrange">#F8961E</color>
-    <color name="MangoTango">#F9844A</color>
-    <color name="maizeCrayola">#F9C74F</color>
-    <color name="card_purple">#8690B1</color>
-    <color name="card_yellow">#FFCC00</color>
-    <color name="card_red">#FF3B30</color>
-    <color name="card_violet">#FF9500</color>
-    <color name="card_blue">#5AC8FA</color>
-    <color name="card_green">#34C759</color>
+    <color name="white">#fff</color>
+    <color name="gray">#3c3f43</color>
+    <color name="red">#5c2b29</color>
+    <color name="orange">#614a19</color>
+    <color name="yellow_orange">#635d19</color>
+    <color name="green">#345920</color>
+    <color name="teal">#16504b</color>
+    <color name="blue">#2d555e</color>
+    <color name="dark_blue">#1e3a5f</color>
+    <color name="purple">#42275e</color>
+    <color name="pink">#5b2245</color>
+    <color name="brown">#442f19</color>
 
 
     <array name="color_picker">
         <item>@color/white</item>
-        <item>@color/card_purple</item>
-        <item>@color/card_yellow</item>
-        <item>@color/card_red</item>
-        <item>@color/card_violet</item>
-        <item>@color/card_blue</item>
-        <item>@color/card_green</item>
-        <item>@color/peach</item>
+        <item>@color/gray</item>
+        <item>@color/red</item>
+        <item>@color/orange</item>
+        <item>@color/yellow_orange</item>
         <item>@color/green</item>
-        <item>@color/purple</item>
-        <item>@color/darkPurple</item>
+        <item>@color/teal</item>
         <item>@color/blue</item>
-        <item>@color/orangeRed</item>
-        <item>@color/yellowOrange</item>
-        <item>@color/MangoTango</item>
-        <item>@color/maizeCrayola</item>
+        <item>@color/dark_blue</item>
+        <item>@color/purple</item>
+        <item>@color/pink</item>
+        <item>@color/brown</item>
     </array>
 </resources>

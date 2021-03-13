@@ -38,7 +38,7 @@
             android:padding="12dp"
             android:text="@string/take_picture"
             android:textColor="@android:color/black"
-            android:textSize="18sp"
+            android:textSize="15sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/bar" />
@@ -56,25 +56,11 @@
             android:padding="12dp"
             android:text="@string/select_image"
             android:textColor="@android:color/black"
-            android:textSize="18sp"
+            android:textSize="15sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/takePicture" />
 
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/addColor"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:drawableStart="@drawable/ic_select_color"
-            android:drawablePadding="10dp"
-            android:fontFamily="@font/koho_regular"
-            android:padding="12dp"
-            android:text="@string/choose_color"
-            android:textColor="@android:color/black"
-            android:textSize="18sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/selectImage" />
 
         <HorizontalScrollView
             android:layout_width="match_parent"
@@ -82,7 +68,7 @@
             android:scrollbars="none"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/addColor">
+            app:layout_constraintTop_toBottomOf="@id/selectImage">
 
             <com.thebluealliance.spectrum.SpectrumPalette
                 android:id="@+id/colorPicker"
@@ -92,7 +78,7 @@
                 android:layout_marginBottom="8dp"
                 app:spectrum_autoPadding="true"
                 app:spectrum_colors="@array/color_picker"
-                app:spectrum_columnCount="16"
+                app:spectrum_columnCount="12"
                 app:spectrum_outlineWidth="0.1dp" />
 
         </HorizontalScrollView>

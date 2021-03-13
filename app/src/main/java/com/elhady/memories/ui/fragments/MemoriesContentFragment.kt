@@ -1,11 +1,9 @@
 package com.elhady.memories.ui.fragments
 
 import android.Manifest
-import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Intent
 import android.content.pm.PackageManager
-import android.graphics.Color
 import android.graphics.drawable.Drawable
 import android.net.Uri
 import android.os.Bundle
@@ -76,7 +74,7 @@ class MemoriesContentFragment : Fragment(R.layout.fragment_memories_content) {
 //        addSharedElementListener()
     }
 
-    @SuppressLint("InflateParams", "QueryPermissionsNeeded")
+//    @SuppressLint("InflateParams", "QueryPermissionsNeeded")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         contentBinding = FragmentMemoriesContentBinding.bind(view)
@@ -176,7 +174,7 @@ class MemoriesContentFragment : Fragment(R.layout.fragment_memories_content) {
                     bottomSheetDialog.dismiss()
                 }
             }
-            @Suppress("DEPRECATION")
+//            @Suppress("DEPRECATION")
             bottomSheetBinding.selectImage.setOnClickListener {
                 Intent(Intent.ACTION_GET_CONTENT).also { chooseIntent ->
                     chooseIntent.type = "image/*"
@@ -188,7 +186,7 @@ class MemoriesContentFragment : Fragment(R.layout.fragment_memories_content) {
             }
         }
 
-        //opens with existing note item
+        //opens with existing memo item
         setUpMemories()
 
         activity.onBackPressedDispatcher.addCallback(
@@ -224,17 +222,17 @@ class MemoriesContentFragment : Fragment(R.layout.fragment_memories_content) {
     /**
      * This Method handles the save and update operation.
      *
-     * Checks if the note arg is null
-     * It will save the note with a unique id.
+     * Checks if the memo arg is null
+     * It will save the memo with a unique id.
      *
-     * If note arg has data it will update
-     * note to save any changes. */
+     * If memo arg has data it will update
+     * memo to save any changes. */
     private fun saveNoteAndGoBack() {
 
         if (contentBinding.etTitle.text.toString().isEmpty() &&
             contentBinding.etMemoriesContent.text.toString().isEmpty()
         ) {
-            result = "Empty Note Discarded"
+            result = "Empty Memo Discarded"
             setFragmentResult("key", bundleOf("bundleKey" to result))
             navController.navigate(
                 MemoriesContentFragmentDirections
@@ -289,8 +287,8 @@ class MemoriesContentFragment : Fragment(R.layout.fragment_memories_content) {
         }
     }
 
-    @SuppressLint("QueryPermissionsNeeded")
-    @Suppress("DEPRECATION")
+//    @SuppressLint("QueryPermissionsNeeded")
+//    @Suppress("DEPRECATION")
     private fun takePictureIntent() {
 
         Intent(MediaStore.ACTION_IMAGE_CAPTURE).also { captureIntent ->
@@ -316,25 +314,25 @@ class MemoriesContentFragment : Fragment(R.layout.fragment_memories_content) {
     }
 
     private fun setUpMemories() {
-        val note = args.memories
+        val memo = args.memories
         val title = contentBinding.etTitle
         val content = contentBinding.etMemoriesContent
         val lastEdited = contentBinding.lastEdited
         val savedImage = memoriesViewModel.setImagePath()
 
-        if (note == null) {
+        if (memo == null) {
             lastEdited.text =
                 getString(R.string.edited_on, SimpleDateFormat.getDateInstance().format(Date()))
             setImage(memoriesViewModel.setImagePath())
         }
 
-        if (note != null) {
-            title.setText(note.title)
-            content.renderMD(note.content)
-            lastEdited.text = getString(R.string.edited_on, note.date)
-            color = note.color
+        if (memo != null) {
+            title.setText(memo.title)
+            content.renderMD(memo.content)
+            lastEdited.text = getString(R.string.edited_on, memo.date)
+            color = memo.color
             if (savedImage != null) setImage(savedImage)
-            else memoriesViewModel.saveImagePath(note.imagePath)
+            else memoriesViewModel.saveImagePath(memo.imagePath)
             contentBinding.apply {
                 job.launch {
                     delay(10)
@@ -344,7 +342,7 @@ class MemoriesContentFragment : Fragment(R.layout.fragment_memories_content) {
                 toolbarFragmentMemoriesContent.setBackgroundColor(color)
                 bottomBarMarkdown.setBackgroundColor(color)
             }
-            activity?.window?.statusBarColor = note.color
+            activity?.window?.statusBarColor = memo.color
         }
     }
 
@@ -367,7 +365,7 @@ class MemoriesContentFragment : Fragment(R.layout.fragment_memories_content) {
         } else contentBinding.memoriesImage.isVisible = false
     }
 
-    @Suppress("DEPRECATION")
+//    @Suppress("DEPRECATION")
     override fun onActivityResult(
         requestCode: Int,
         resultCode: Int,

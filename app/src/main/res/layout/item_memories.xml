@@ -10,7 +10,8 @@
     android:clickable="true"
     android:focusable="true"
     app:cardCornerRadius="13dp"
-    app:cardElevation="5dp">
+    app:cardElevation="5dp"
+    tools:cardBackgroundColor="@color/green">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/memoriesItemContainer"
@@ -84,15 +85,11 @@
             android:layout_marginBottom="10dp"
             android:background="@drawable/background_date"
             android:gravity="center_vertical"
-            android:drawableStart="@drawable/ic_calendar"
             android:drawablePadding="6dp"
             android:fontFamily="@font/koho_regular"
             android:paddingStart="10dp"
-            android:paddingTop="3dp"
-            android:paddingEnd="10dp"
-            android:paddingBottom="3dp"
             android:text="@string/dd_mm_yyyy"
-            android:textSize="12sp"
+            android:textSize="10sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/memoriesContentItemTitle" />

@@ -1,6 +1,5 @@
 package com.elhady.memories.ui.fragments
 
-import android.annotation.SuppressLint
 import android.content.res.Configuration.ORIENTATION_LANDSCAPE
 import android.content.res.Configuration.ORIENTATION_PORTRAIT
 import android.graphics.Color
@@ -107,6 +106,7 @@ class MemoriesFragment : Fragment(R.layout.fragment_memories) {
                 after: Int
             ) {
                 binding.noData.isVisible = false
+                binding.noMemories.isVisible = false
             }
 
             override fun onTextChanged(
@@ -151,6 +151,7 @@ class MemoriesFragment : Fragment(R.layout.fragment_memories) {
             clearTxtFunction()
             it.isVisible = false
             binding.noData.isVisible = false
+            binding.noMemories.isVisible = false
         }
 
 
@@ -183,7 +184,7 @@ class MemoriesFragment : Fragment(R.layout.fragment_memories) {
     } //onViewCreated closed
 
     private fun recyclerViewDisplay() {
-        @SuppressLint("SwitchIntDef")
+//        @SuppressLint("SwitchIntDef")
         when (resources.configuration.orientation) {
             ORIENTATION_PORTRAIT -> setUpRecyclerView(2)
             ORIENTATION_LANDSCAPE -> setUpRecyclerView(3)
@@ -211,6 +212,7 @@ class MemoriesFragment : Fragment(R.layout.fragment_memories) {
     private fun observerDataChanges() {
         memoriesViewModel.getAllMemories().observe(viewLifecycleOwner) { list ->
             binding.noData.isVisible = list.isEmpty()
+            binding.noMemories.isVisible = list.isEmpty()
             memoriesAdapter.submitList(list)
         }
     }
@@ -220,9 +222,9 @@ class MemoriesFragment : Fragment(R.layout.fragment_memories) {
         val swipeToDeleteCallback = object : SwipeToDelete() {
             override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
                 val position = viewHolder.absoluteAdapterPosition
-                val note = memoriesAdapter.currentList[position]
+                val memories = memoriesAdapter.currentList[position]
                 var actionBtnTapped = false
-                memoriesViewModel.deleteMemories(note)
+                memoriesViewModel.deleteMemories(memories)
                 binding.search.apply {
                     hideKeyboard()
                     clearFocus()
@@ -231,13 +233,13 @@ class MemoriesFragment : Fragment(R.layout.fragment_memories) {
                     observerDataChanges()
                 }
                 val snackBar = Snackbar.make(
-                    requireView(), "Note Deleted", Snackbar.LENGTH_LONG
+                    requireView(), "Memo Deleted", Snackbar.LENGTH_LONG
                 ).addCallback(object : BaseTransientBottomBar.BaseCallback<Snackbar>() {
                     @Suppress("NULLABILITY_MISMATCH_BASED_ON_JAVA_ANNOTATIONS")
                     override fun onDismissed(transientBottomBar: Snackbar?, event: Int) {
                         when (!actionBtnTapped) {
-                            (note?.imagePath?.isNotEmpty()) -> {
-                                val toDelete = File(note.imagePath)
+                            (memories?.imagePath?.isNotEmpty()) -> {
+                                val toDelete = File(memories.imagePath)
                                 if (toDelete.exists()) {
                                     toDelete.delete()
                                 }
@@ -248,8 +250,9 @@ class MemoriesFragment : Fragment(R.layout.fragment_memories) {
 
                     override fun onShown(transientBottomBar: Snackbar?) {
                         transientBottomBar?.setAction("UNDO") {
-                            memoriesViewModel.saveMemories(note)
+                            memoriesViewModel.saveMemories(memories)
                             binding.noData.isVisible = false
+                            binding.noMemories.isVisible = false
                             actionBtnTapped = true
 
                         }
