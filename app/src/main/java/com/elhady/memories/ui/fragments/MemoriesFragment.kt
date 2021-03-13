@@ -1,7 +1,8 @@
 package com.elhady.memories.ui.fragments
 
 import android.annotation.SuppressLint
-import android.content.res.Configuration
+import android.content.res.Configuration.ORIENTATION_LANDSCAPE
+import android.content.res.Configuration.ORIENTATION_PORTRAIT
 import android.graphics.Color
 import android.os.Bundle
 import android.text.Editable
@@ -22,7 +23,7 @@ import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.elhady.memories.R
 import com.elhady.memories.adapter.MemoriesAdapter
 import com.elhady.memories.databinding.FragmentMemoriesBinding
-import com.elhady.memories.ui.activity.MemoriesActivity
+import com.elhady.memories.MainActivity
 import com.elhady.memories.utils.SwipeToDelete
 import com.elhady.memories.utils.hideKeyboard
 import com.elhady.memories.viewmodel.MemoriesViewModel
@@ -58,7 +59,7 @@ class MemoriesFragment : Fragment(R.layout.fragment_memories) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentMemoriesBinding.bind(view)
-        val activity = activity as MemoriesActivity
+        val activity = activity as MainActivity
         val navController = Navigation.findNavController(view)
 
         requireView().hideKeyboard()
@@ -184,8 +185,8 @@ class MemoriesFragment : Fragment(R.layout.fragment_memories) {
     private fun recyclerViewDisplay() {
         @SuppressLint("SwitchIntDef")
         when (resources.configuration.orientation) {
-            Configuration.ORIENTATION_PORTRAIT -> setUpRecyclerView(2)
-            Configuration.ORIENTATION_LANDSCAPE -> setUpRecyclerView(3)
+            ORIENTATION_PORTRAIT -> setUpRecyclerView(2)
+            ORIENTATION_LANDSCAPE -> setUpRecyclerView(3)
         }
     }
 

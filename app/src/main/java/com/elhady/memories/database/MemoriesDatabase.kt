@@ -32,8 +32,7 @@ abstract class MemoriesDatabase : RoomDatabase() {
 
         private fun createDatabase(context: Context) = Room.databaseBuilder(
             context.applicationContext,
-            MemoriesDatabase::class.java,
-            "note_database"
+            MemoriesDatabase::class.java, "memories_database"
         ).build()
     }
 

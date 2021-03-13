@@ -13,7 +13,7 @@
         <intent
             android:action="android.intent.action.VIEW"
             android:targetPackage="com.elhady.memories"
-            android:targetClass="com.elhady.memories.ui.activity.NoteActivity"
+            android:targetClass="com.elhady.memories.ui.splash.NoteActivity"
             android:data="memoriessapp://com.elhady.memories/addnewmemories" />
     </shortcut>
 

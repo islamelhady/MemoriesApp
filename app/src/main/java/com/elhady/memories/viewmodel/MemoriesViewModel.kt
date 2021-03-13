@@ -34,11 +34,10 @@ class MemoriesViewModel(private val repository: MemoriesRepository) : ViewModel(
         return repository.searchMemories(query)
     }
 
-    fun saveMemories(newMemory: Memories) {
-        viewModelScope.launch(Dispatchers.IO) {
+    fun saveMemories(newMemory: Memories) = viewModelScope.launch(Dispatchers.IO) {
             repository.addMemories(newMemory)
         }
-    }
+
 
 
     fun updateMemories(existingMemories: Memories) = viewModelScope.launch(Dispatchers.IO) {

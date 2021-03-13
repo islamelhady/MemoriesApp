@@ -77,7 +77,7 @@
             tools:text="@string/some_text" />
 
         <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/noteDate"
+            android:id="@+id/memoriesDate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="10dp"

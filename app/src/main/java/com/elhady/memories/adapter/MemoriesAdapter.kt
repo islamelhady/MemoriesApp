@@ -1,6 +1,8 @@
 package com.elhady.memories.adapter
 
 import android.net.Uri
+import android.os.Parcel
+import android.os.Parcelable
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -39,7 +41,7 @@ class MemoriesAdapter :
         private val contentBinding = ItemMemoriesBinding.bind(itemView)
         val title: MaterialTextView = contentBinding.memoriesItemTitle
         val content: TextView = contentBinding.memoriesContentItemTitle
-        val date: MaterialTextView = contentBinding.noteDate
+        val date: MaterialTextView = contentBinding.memoriesDate
         val image: ImageView = contentBinding.itemMemoriesImage
         val parent: MaterialCardView = contentBinding.memoriesItemLayoutParent
         val markWon = Markwon.builder(itemView.context)
@@ -104,4 +106,5 @@ class MemoriesAdapter :
             }
         }
     }
+
 }

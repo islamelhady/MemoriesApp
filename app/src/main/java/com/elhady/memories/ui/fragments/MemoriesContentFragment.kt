@@ -36,7 +36,7 @@ import com.elhady.memories.R
 import com.elhady.memories.databinding.BottomSheetDialogBinding
 import com.elhady.memories.databinding.FragmentMemoriesContentBinding
 import com.elhady.memories.model.Memories
-import com.elhady.memories.ui.activity.MemoriesActivity
+import com.elhady.memories.MainActivity
 import com.elhady.memories.utils.*
 import com.elhady.memories.viewmodel.MemoriesViewModel
 import com.google.android.material.bottomsheet.BottomSheetBehavior
@@ -47,7 +47,7 @@ import java.io.File
 import java.text.SimpleDateFormat
 import java.util.*
 
-class MemoriesContentFragment : Fragment() {
+class MemoriesContentFragment : Fragment(R.layout.fragment_memories_content) {
 
     private lateinit var navController: NavController
     private lateinit var contentBinding: FragmentMemoriesContentBinding
@@ -65,15 +65,15 @@ class MemoriesContentFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        val animation = MaterialContainerTransform().apply {
-            drawingViewId = R.id.fragment
-            scrimColor = Color.TRANSPARENT
-            duration = 300L
-            setAllContainerColors(requireContext().themeColor(R.attr.colorSurface))
-        }
-        sharedElementEnterTransition = animation
-        sharedElementReturnTransition = animation
-        addSharedElementListener()
+//        val animation = MaterialContainerTransform().apply {
+//            drawingViewId = R.id.fragment
+//            scrimColor = Color.TRANSPARENT
+//            duration = 300L
+//            setAllContainerColors(requireContext().themeColor(R.attr.colorSurface))
+//        }
+//        sharedElementEnterTransition = animation
+//        sharedElementReturnTransition = animation
+//        addSharedElementListener()
     }
 
     @SuppressLint("InflateParams", "QueryPermissionsNeeded")
@@ -89,7 +89,7 @@ class MemoriesContentFragment : Fragment() {
         )
 
         navController = Navigation.findNavController(view)
-        val activity = activity as MemoriesActivity
+        val activity = activity as MainActivity
         registerForContextMenu(contentBinding.memoriesImage)
 
         contentBinding.backBtn.setOnClickListener {
@@ -100,9 +100,9 @@ class MemoriesContentFragment : Fragment() {
         try {
             contentBinding.etMemoriesContent.setOnFocusChangeListener { _, hasFocus ->
                 if (hasFocus) {
-                    contentBinding.bottomBar.visibility = View.VISIBLE
+                    contentBinding.bottomBarMarkdown.visibility = View.VISIBLE
                     contentBinding.etMemoriesContent.setStylesBar(contentBinding.styleBar)
-                } else contentBinding.bottomBar.visibility = View.GONE
+                } else contentBinding.bottomBarMarkdown.visibility = View.GONE
             }
         } catch (e: Throwable) {
             Log.d("TAG", "e.stackTraceToString()")
@@ -132,7 +132,7 @@ class MemoriesContentFragment : Fragment() {
                         contentBinding.apply {
                             memoriesContentFragmentParent.setBackgroundColor(color)
                             toolbarFragmentMemoriesContent.setBackgroundColor(color)
-                            bottomBar.setBackgroundColor(color)
+                            bottomBarMarkdown.setBackgroundColor(color)
                             activity.window.statusBarColor = color
                         }
                         bottomSheetBinding.bottomSheetParent.setCardBackgroundColor(color)
@@ -200,26 +200,26 @@ class MemoriesContentFragment : Fragment() {
             })
     }
 
-    private fun addSharedElementListener() {
-        (sharedElementEnterTransition as Transition).addListener(
-            object : TransitionListenerAdapter() {
-                override fun onTransitionStart(transition: Transition) {
-                    super.onTransitionStart(transition)
-                    if (args.memories?.imagePath != null) {
-                        contentBinding.memoriesImage.isVisible = true
-                        val uri = Uri.fromFile(File(args.memories?.imagePath!!))
-                        job.launch {
-                            requireContext().asyncImageLoader(
-                                uri,
-                                contentBinding.memoriesImage,
-                                this
-                            )
-                        }
-                    } else contentBinding.memoriesImage.isVisible = false
-                }
-            }
-        )
-    }
+//    private fun addSharedElementListener() {
+//        (sharedElementEnterTransition as Transition).addListener(
+//            object : TransitionListenerAdapter() {
+//                override fun onTransitionStart(transition: Transition) {
+//                    super.onTransitionStart(transition)
+//                    if (args.memories?.imagePath != null) {
+//                        contentBinding.memoriesImage.isVisible = true
+//                        val uri = Uri.fromFile(File(args.memories?.imagePath!!))
+//                        job.launch {
+//                            requireContext().asyncImageLoader(
+//                                uri,
+//                                contentBinding.memoriesImage,
+//                                this
+//                            )
+//                        }
+//                    } else contentBinding.memoriesImage.isVisible = false
+//                }
+//            }
+//        )
+//    }
 
     /**
      * This Method handles the save and update operation.
@@ -255,7 +255,7 @@ class MemoriesContentFragment : Fragment() {
                             memoriesViewModel.setImagePath()
                         )
                     )
-                    result = "Note Saved"
+                    result = "Memories Saved"
                     setFragmentResult(
                         "key",
                         bundleOf("bundleKey" to result)
@@ -342,7 +342,7 @@ class MemoriesContentFragment : Fragment() {
                     memoriesImage.isVisible = true
                 }
                 toolbarFragmentMemoriesContent.setBackgroundColor(color)
-                bottomBar.setBackgroundColor(color)
+                bottomBarMarkdown.setBackgroundColor(color)
             }
             activity?.window?.statusBarColor = note.color
         }

@@ -12,6 +12,7 @@ import android.view.inputmethod.InputMethodManager
 import android.view.inputmethod.InputMethodManager.HIDE_NOT_ALWAYS
 import android.widget.ImageView
 import android.widget.Toast
+import android.widget.Toast.makeText
 import androidx.annotation.AttrRes
 import androidx.annotation.ColorInt
 import androidx.core.content.res.use
@@ -23,7 +24,6 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.CoroutineStart
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.async
-import java.lang.IllegalArgumentException
 
 /**
  * Created by islam elhady on 28-Feb-21.
@@ -83,4 +83,4 @@ fun Context.themeColor(
     }
 }
 
-fun Context.shortToast(message: String?) = Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
+fun Context.shortToast(message: String?) = makeText(this, message, Toast.LENGTH_SHORT).show()

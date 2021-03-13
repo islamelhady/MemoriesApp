@@ -25,7 +25,7 @@
         </provider>
 
         <activity
-            android:name=".ui.activity.SplashActivity"
+            android:name=".ui.splash.SplashActivity"
             android:theme="@style/splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -34,9 +34,9 @@
             </intent-filter>
             <meta-data
                 android:name="android.app.shortcuts"
-                android:resource="@xml/shortcuts"/>
+                android:resource="@xml/shortcuts" />
         </activity>
-        <activity android:name=".ui.activity.MemoriesActivity" />
+        <activity android:name=".MainActivity" />
     </application>
 
 </manifest>
