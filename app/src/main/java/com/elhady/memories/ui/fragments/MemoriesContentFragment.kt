@@ -40,6 +40,7 @@ import com.elhady.memories.viewmodel.MemoriesViewModel
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.transition.platform.MaterialContainerTransform
+import kotlinx.android.synthetic.main.bottom_sheet_dialog.*
 import kotlinx.coroutines.*
 import java.io.File
 import java.text.SimpleDateFormat

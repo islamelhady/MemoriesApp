@@ -77,7 +77,7 @@ class MemoriesFragment : Fragment(R.layout.fragment_memories) {
         //Receives confirmation from the memoriesContentFragment
         setFragmentResultListener("key") { _, bundle ->
             when (val result = bundle.getString("bundleKey")) {
-                "Memories Saved", "Empty Memories Discarded" -> {
+                "Memories Saved", "Empty Memo Discarded" -> {
                     CoroutineScope(Dispatchers.Main).launch {
                         Snackbar.make(view, result, Snackbar.LENGTH_SHORT).apply {
                             animationMode = Snackbar.ANIMATION_MODE_FADE
