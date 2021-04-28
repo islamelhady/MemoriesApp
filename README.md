@@ -26,19 +26,31 @@ MVVM - MVVM stands for Model, View, ViewModel. MVVM is one of the architectural 
 ## Package Structure
 
     .
-    ├── data                # For data handling.
-    │   ├── db              # Local Persistence Database. Room (SQLite) database
-    |   │   ├── dao         # Data Access Object for Room
-    |   |   |── database    # Database Instance
+    ├── adapter                             # Adapter for RecyclerView
+    |   ├── DiffutilCallback
+    |   |── MemoriesAdapter
     |
-    ├── model               # Model classes
+    ├── database                            # Local Persistence Database. Room (SQLite) database
+    |   ├── Dao                             # Data Access Object for Room
+    |   |── MemoriesDatabase                # Database Instance
     |
+    ├── model                               # Model classes
+    |   ├── Memories
     |
-    ├── ui                  # Activity/View layer
-    │   ├── main            # Main Screen Activity & ViewModel
-    |   │   ├── adapter     # Adapter for RecyclerView
-    |   │   └── viewmodel   # ViewHolder for RecyclerView
-
+    ├── repository                          # Repository classes
+    |   ├── MemoriesRepository
+    |
+    ├── ui                                  # Activity/View layer
+    │   ├── fragments                       # Main Screen Activity & ViewModel
+    |   │   ├── MemoriesContentFragment     # Adapter for RecyclerView
+    |   │   └── MemoriesFragment            # ViewHolder for RecyclerView
+    │   ├── splash
+    |   │   ├── SplashActivity
+    |
+    ├── utils
+    │   ├── main                            # Main Screen Activity & ViewModel
+    |   │   ├── adapter                     # Adapter for RecyclerView
+    |   │   └── viewmodel                   # ViewHolder for RecyclerView
 
 ## Architecture
 
