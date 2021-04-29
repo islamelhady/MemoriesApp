@@ -25,7 +25,7 @@ MVVM - MVVM stands for Model, View, ViewModel. MVVM is one of the architectural 
 
 ## Package Structure
 
-    .
+
     ├── adapter                             # Adapter for RecyclerView
     |   ├── DiffutilCallback
     |   └── MemoriesAdapter                 # ViewHolder for RecyclerView
