@@ -1,7 +1,7 @@
 # MVVM-Memories-app
 This is simple memories app that follows MVVM architectural design pattern and uses android jetpack components.
 
-![GitHub Cards Preview](screenshots/MEMORIES APP CARD.jpg?raw=true)
+![GitHub Cards Preview](screenshots/memories_app_card.jpg?raw=true)
 
 ## MVVM Architecture
 
@@ -25,21 +25,24 @@ MVVM - MVVM stands for Model, View, ViewModel. MVVM is one of the architectural 
 
 ## Package Structure
 
-├── database            # Local Persistence Database. Room (SQLite) database
-|   ├── Dao             # Data Access Object for Room
-|   |── MemoriesDatabase        # Database Instance
-|
-├── model               # Model classes
-|
-|
-├── ui                  # Activity/View layer
-│   ├── main            # Main Screen Activity & ViewModel
-|   │   ├── adapter     # Adapter for RecyclerView
-|   │   └── viewmodel   # ViewHolder for RecyclerView
+    thecodemonks.org.nottzapp   # Root Package
+    .
+    ├── data                # For data handling.
+    │   ├── db              # Local Persistence Database. Room (SQLite) database
+    |   │   ├── dao         # Data Access Object for Room
+    |   |   |── database    # Database Instance
+    |
+    ├── model               # Model classes
+    |
+    |
+    ├── ui                  # Activity/View layer
+    │   ├── main            # Main Screen Activity & ViewModel
+    |   │   ├── adapter     # Adapter for RecyclerView
+    |   │   └── viewmodel   # ViewHolder for RecyclerView
 
 
 ## Architecture
 
 This app uses [***MVVM (Model View View-Model)***](https://developer.android.com/jetpack/docs/guide#recommended-app-arch) architecture.
 
-![](screenshots/ANDROID ROOM DB DIAGRAM.jpg?raw=true)
+![](screenshots/android_room_db.jpg?raw=true)
