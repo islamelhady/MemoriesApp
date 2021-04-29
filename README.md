@@ -28,29 +28,35 @@ MVVM - MVVM stands for Model, View, ViewModel. MVVM is one of the architectural 
     .
     ├── adapter                             # Adapter for RecyclerView
     |   ├── DiffutilCallback
-    |   |── MemoriesAdapter
+    |   └── MemoriesAdapter                 # ViewHolder for RecyclerView
     |
     ├── database                            # Local Persistence Database. Room (SQLite) database
     |   ├── Dao                             # Data Access Object for Room
-    |   |── MemoriesDatabase                # Database Instance
+    |   └── MemoriesDatabase                # Database Instance
     |
     ├── model                               # Model classes
-    |   ├── Memories
+    |   └── Memories
     |
     ├── repository                          # Repository classes
-    |   ├── MemoriesRepository
+    |   └── MemoriesRepository
     |
     ├── ui                                  # Activity/View layer
-    │   ├── fragments                       # Main Screen Activity & ViewModel
-    |   │   ├── MemoriesContentFragment     # Adapter for RecyclerView
-    |   │   └── MemoriesFragment            # ViewHolder for RecyclerView
+    │   ├── fragments
+    |   │   ├── MemoriesContentFragment     # Memories Content Fragment
+    |   │   └── MemoriesFragment            # Main Screen Fragment
     │   ├── splash
-    |   │   ├── SplashActivity
+    |   │   └── SplashActivity              # Splash Activity
     |
     ├── utils
-    │   ├── main                            # Main Screen Activity & ViewModel
-    |   │   ├── adapter                     # Adapter for RecyclerView
-    |   │   └── viewmodel                   # ViewHolder for RecyclerView
+    │   ├── ContentUriToActualFilePath
+    |   ├── SwipeToDelete                   # Swipe To Delete for RecyclerView
+    |   └── Util                            # ViewHolder for RecyclerView
+    |
+    ├── viewmodel                           # Main ViewModel
+    │   ├── MemoriesViewModel
+    |   └── MemoriesViewModelFactory
+    |
+    ├── MainActivity                        # Main Screen Activity
 
 ## Architecture
 
