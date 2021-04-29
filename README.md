@@ -1,7 +1,7 @@
 # MVVM-Memories-app
 This is simple memories app that follows MVVM architectural design pattern and uses android jetpack components.
 
-![GitHub Cards Preview](screenshots/memories_app_card.jpg?raw=true)
+![GitHub Cards Preview](screenshots/memories_card.jpg?raw=true)
 
 ## MVVM Architecture
 
