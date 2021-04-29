@@ -25,7 +25,6 @@ MVVM - MVVM stands for Model, View, ViewModel. MVVM is one of the architectural 
 
 ## Package Structure
 
-    thecodemonks.org.nottzapp   # Root Package
     .
     ├── data                # For data handling.
     │   ├── db              # Local Persistence Database. Room (SQLite) database
